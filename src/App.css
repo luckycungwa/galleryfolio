@@ -1,20 +1,123 @@
-.App {
-  text-align: center;
+
+ *, body, html {
+  margin: 0;
+  padding: 0;
+  /* scrollbar-width: none; */
+  /* hide scrollbar x axes */
+  /* overflow-x: hidden; */
+  font-family: 'Analogue', sans-serif;
+  /* cursor: none; Hide the default cursor */
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Fonts */
+/* import Analogue.otf from fonts folder  */
+@font-face {
+  font-family: 'Analogue';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/Analogue.otf') format('truetype');
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+.hero-image {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2%;
 }
+.image-section {
+  display: flex;
+  width: 100dvh;
+  height: 45dvw;
+  align-items: center;
+  padding: 24px;
+  border-radius: 2%;
+}
+
+.hero-section {
+  display: flex;
+  height: 100dvh;
+  width: 100%;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background-color: #61dafb; */
+  /* padding: 24px; */
+  
+}
+
+.hero-text {
+  display: flex;
+  width: 50%;
+  height: 90dvh;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 100px 60px;
+  color: #1a1a1a;
+  text-align: left;
+}
+.hero-heading {
+  width: 90%;
+  flex-wrap: wrap;
+  font-size: 140px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  /* margin-top: 40px ; */
+  line-height: .9;
+}
+
+.hero-tag {
+  font-size: 60px;
+  letter-spacing: 2px;
+  color: #1a1a1a;
+  margin-bottom: 40px ;
+}
+.mark-orange {
+  color: #FF5200;
+}
+
+.hero-info {
+  flex-direction: column;
+  display: flex;
+  font-size: 18px;
+  width: 90%;
+  
+  letter-spacing: 1px;
+  gap: 16px;
+}
+.hero-info2 {
+  font-size: 12px;
+  width: 60%;
+  letter-spacing: 1px;
+}
+
+.gallery-title {
+  font-size: 60px;
+  letter-spacing: 4px;
+  text-transform: capitalize;
+  color: #1a1a1a;
+}
+
+.gallery {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  /* padding: 24px 4px; */
+  background-color: aliceblue;
+  padding: 16px 24px;
+
+  overflow-y: auto;
+  user-select: none;
+  overflow-x: hidden;
+}
+
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,17 +125,36 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  /* cursor: none !important; Hide the default cursor */
 }
 
-.App-link {
-  color: #61dafb;
+/* Scrollbar stuff */
+
+body {
+  --sb-track-color: #fbfbfb;
+  --sb-thumb-color: #ff4600;
+  --sb-size: 8px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+body::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 10px;
+  
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
   }
 }
